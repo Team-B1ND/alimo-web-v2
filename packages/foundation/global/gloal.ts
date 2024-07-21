@@ -6,6 +6,7 @@ const GlobalStyles = createGlobalStyle`
         padding: 0;
         border: none;
         font-family: "Pretendard" !important;
+        line-height: 130%;
     }
 
     a {
