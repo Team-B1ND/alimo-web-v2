@@ -2,22 +2,28 @@
   "name": "aliom-web-v2",
   "version": "1.0.0",
   "description": "",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare": "husky",
+    "storybook": "turbo run storybook  --filter=./packages/components"
   },
   "keywords": [],
   "packageManager": "pnpm@9.1.2+sha256.19c17528f9ca20bd442e4ca42f00f1b9808a9cb419383cd04ba32ef19322aba7",
   "devDependencies": {
+    "husky": "^9.1.1",
+    "lint-staged": "^15.2.7",
     "turbo": "^2.0.6"
   },
   "dependencies": {
     "react": "^18.3.1"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }
