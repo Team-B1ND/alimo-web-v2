@@ -1,15 +1,18 @@
 {
   "$schema": "https://turborepo.org/schema.json",
   "tasks": {
+    "dev": {
+      "cache": false,
+      "outputs": []
+    },
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     },
-    "dev": {
-      "cache": false
-    },
-    "lint": {
-      "outputs": []
+    "storybook": {
+      "dependsOn": [],
+      "outputs": [],
+      "inputs": ["./packages/components/**"]
     }
   }
 }
