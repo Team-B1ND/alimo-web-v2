@@ -14,9 +14,9 @@ export const Button = ({ buttonSize, customStyle, children, leftIcon, rightIcon,
   );
 };
 
-export const ToggleButton = ({ disabled }: ButtonProps) => {
+export const ToggleButton = ({ disabled, onclick }: ButtonProps) => {
   return (
-    <S.ToggleButtonWrap disabled={disabled}>
+    <S.ToggleButtonWrap disabled={disabled} onClick={() => !disabled}>
       <span></span>
     </S.ToggleButtonWrap>
   );
