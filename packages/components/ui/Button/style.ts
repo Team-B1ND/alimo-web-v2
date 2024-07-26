@@ -41,6 +41,29 @@ export const ButtonWrap = styled.button<{ buttonSize: string; customStyle?: CSSO
 
 export const ButtonTextWrap = styled.div``;
 
+export const ToggleButtonWrap = styled.div<{ disabled: boolean }>`
+  width: 50px;
+  height: 30px;
+  border-radius: 50px;
+
+  display: flex;
+  justify-content: ${({ disabled }) => (disabled ? "flex-end" : "flex-start")};
+  align-items: center;
+  padding-left: 1.5px;
+  padding-right: 1.5px;
+
+  background: ${({ disabled }) => (disabled ? color.Color.Primary60 : color.Color.Light.label.alt)};
+
+  span {
+    width: 27px;
+    height: 27px;
+
+    border: none;
+    border-radius: 50%;
+    background: ${color.Color.Natural00};
+  }
+`;
+
 const ButtonSizeStyle = {
   cta: css`
     width: 320px;

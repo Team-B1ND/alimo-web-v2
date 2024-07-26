@@ -2,7 +2,7 @@ import React from "react";
 import * as S from "./style";
 import { ButtonProps } from "./types";
 
-const Button = ({ buttonSize, customStyle, children, leftIcon, rightIcon, disabled, onclick }: ButtonProps) => {
+export const Button = ({ buttonSize, customStyle, children, leftIcon, rightIcon, disabled, onclick }: ButtonProps) => {
   return (
     <S.ButtonWrap buttonSize={buttonSize} customStyle={customStyle} onClick={onclick} disabled={disabled}>
       <div>
@@ -14,4 +14,10 @@ const Button = ({ buttonSize, customStyle, children, leftIcon, rightIcon, disabl
   );
 };
 
-export default Button;
+export const ToggleButton = ({ disabled }: ButtonProps) => {
+  return (
+    <S.ToggleButtonWrap disabled={disabled}>
+      <span></span>
+    </S.ToggleButtonWrap>
+  );
+};
