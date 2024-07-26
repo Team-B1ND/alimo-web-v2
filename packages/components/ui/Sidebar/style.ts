@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import color from "../../../../foundation/color/color";
-import font from "../../../../foundation/typography/typography";
+import color from "../../../foundation/color/color";
+import font from "../../../foundation/typography/typography";
 
 export const DefaultSidebarWrap = styled.div`
   width: 150px;
