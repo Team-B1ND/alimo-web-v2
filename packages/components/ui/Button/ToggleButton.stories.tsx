@@ -7,5 +7,5 @@ export default {
 } as Meta<typeof ToggleButton>;
 
 export const Toggle: StoryObj<typeof ToggleButton> = {
-  args: {},
+  args: { disabled: false },
 };

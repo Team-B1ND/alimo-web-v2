@@ -1,13 +1,11 @@
 import { Button } from "./Button";
 import { Meta, StoryObj } from "@storybook/react";
 
-const meta: Meta<typeof Button> = {
+export default {
   title: "ui/Button",
   component: Button,
-};
-
-export default meta;
+} as Meta<typeof Button>;
 
 export const Common: StoryObj<typeof Button> = {
-  args: {},
+  args: { disabled: false },
 };

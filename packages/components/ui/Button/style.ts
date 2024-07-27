@@ -6,7 +6,7 @@ export const ButtonWrap = styled.button<{ buttonSize: string; customStyle?: CSSO
   display: flex;
   align-items: center;
   justify-content: center;
-  background: ${({ disabled }) => (disabled ? color.Color.Primary60 : color.Color.Natural10)};
+  background: ${({ disabled }) => (!disabled ? color.Color.Primary60 : color.Color.Natural10)};
   border: none;
   div {
     display: flex;
@@ -21,7 +21,7 @@ export const ButtonWrap = styled.button<{ buttonSize: string; customStyle?: CSSO
     }
 
     span {
-      color: ${({ disabled }) => (disabled ? color.Color.Natural90 : color.Color.Natural40)};
+      color: ${({ disabled }) => (!disabled ? color.Color.Natural90 : color.Color.Natural40)};
       font-size: 16px;
       font-weight: ${({ buttonSize }) =>
         buttonSize === "small" ? font.Typograhpy.FontWeight.Medium : font.Typograhpy.FontWeight.Bold};
@@ -39,7 +39,36 @@ export const ButtonWrap = styled.button<{ buttonSize: string; customStyle?: CSSO
   ${({ customStyle }) => customStyle}
 `;
 
-export const ButtonTextWrap = styled.div``;
+export const TextButtontWrap = styled.div<{ buttonSize: string; disabled: boolean }>`
+  padding: 10px 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  div {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    span {
+      color: ${({ disabled }) => (!disabled ? color.Color.Primary60 : color.Color.Light.label.alt)};
+      font-size: 16px;
+    }
+  }
+
+  ${({ buttonSize }) => {
+    return TextButtonStyle[buttonSize];
+  }}
+`;
 
 export const ToggleButtonWrap = styled.div<{ disabled: boolean }>`
   width: 50px;
@@ -47,12 +76,14 @@ export const ToggleButtonWrap = styled.div<{ disabled: boolean }>`
   border-radius: 50px;
 
   display: flex;
-  justify-content: ${({ disabled }) => (disabled ? "flex-end" : "flex-start")};
+  justify-content: ${({ disabled }) => (!disabled ? "flex-end" : "flex-start")};
   align-items: center;
   padding-left: 1.5px;
   padding-right: 1.5px;
 
-  background: ${({ disabled }) => (disabled ? color.Color.Primary60 : color.Color.Light.label.alt)};
+  background: ${({ disabled }) => (!disabled ? color.Color.Primary60 : color.Color.Light.label.alt)};
+
+  cursor: pointer;
 
   span {
     width: 27px;
@@ -109,5 +140,28 @@ const ButtonTextStyle = {
   small: css`
     width: 102px;
     gap: 3px;
+  `,
+};
+
+const TextButtonStyle = {
+  cta: css``,
+  large: css``,
+  medium: css`
+    width: 104px;
+    height: 21px;
+    font-weight: ${font.Typograhpy.FontWeight.Bold};
+
+    div {
+      gap: 4px;
+    }
+  `,
+  small: css`
+    width: 102px;
+    height: 21px;
+    font-weight: ${font.Typograhpy.FontWeight.Medium};
+
+    div {
+      gap: 3px;
+    }
   `,
 };
