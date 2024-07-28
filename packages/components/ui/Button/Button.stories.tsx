@@ -7,5 +7,8 @@ export default {
 } as Meta<typeof Button>;
 
 export const Common: StoryObj<typeof Button> = {
-  args: { disabled: false },
+  args: {
+    disabled: false,
+    buttonSize: "cta"
+  },
 };
