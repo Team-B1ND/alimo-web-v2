@@ -51,7 +51,7 @@ export const CodeTextField = ({ value, count, isDisabled, customStyle, onchange 
     }
   };
 
-  const COUNT_OF_CODE = Array(count)
+  const COUNT_OF_CODE = Array(count!)
     .fill("")
     .map((_, idx) => (
       <S.CodeTextField isdisabled={isDisabled!} customStyle={customStyle}>

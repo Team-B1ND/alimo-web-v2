@@ -8,6 +8,7 @@ export const ButtonWrap = styled.button<{ buttonSize: string; customStyle?: CSSO
   justify-content: center;
   background: ${({ disabled }) => (!disabled ? color.Color.Primary60 : color.Color.Natural10)};
   border: none;
+  cursor: pointer;
   div {
     display: flex;
     justify-content: center;
@@ -85,9 +86,9 @@ export const TextButtonWrap = styled.div<{ customStyle?: CSSObject; disabled: bo
 
   cursor: pointer;
 
-  span {
-    color: ${({ disabled }) => (disabled ? color.Color.Light.label.alt : color.Color.Light.color.neturalPrimary)};
+  color: ${({ disabled }) => (disabled ? color.Color.Light.label.alt : color.Color.Light.color.neturalPrimary)};
 
+  span {
     font-size: ${font.Typograhpy.Body};
     font-weight: ${font.Typograhpy.FontWeight.Medium};
   }

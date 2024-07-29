@@ -28,9 +28,9 @@ export const CheckBoxButton = ({ disabled }: ButtonProps) => {
   return <>{disabled ? <S.CheckBoxButton src={Disabled} /> : <S.CheckBoxButton src={Checked} />}</>;
 };
 
-export const TextButton = ({ customStyle, disabled, leftIcon, rightIcon, children }: ButtonProps) => {
+export const TextButton = ({ customStyle, disabled, leftIcon, rightIcon, children, onclick }: ButtonProps) => {
   return (
-    <S.TextButtonWrap customStyle={customStyle} disabled={disabled}>
+    <S.TextButtonWrap customStyle={customStyle} disabled={disabled} onClick={onclick}>
       {leftIcon}
       <span>{children}</span>
       {rightIcon}

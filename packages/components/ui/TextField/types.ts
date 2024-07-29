@@ -7,8 +7,8 @@ export interface TextFieldProps {
   trailingIcon: React.ReactNode;
   shape: Shape;
   isDisabled?: boolean;
-  customStyle: CSSObject;
-  count: number;
+  customStyle?: CSSObject;
+  count?: number;
   onchange: () => void;
   onclick: () => void;
 }
