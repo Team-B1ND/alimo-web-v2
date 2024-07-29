@@ -71,6 +71,35 @@ export const CheckBoxButton = styled.img`
   cursor: pointer;
 `;
 
+export const TextButtonWrap = styled.div<{ customStyle?: CSSObject; disabled: boolean }>`
+  width: 102px;
+  height: 21px;
+
+  padding: 8px 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 3px;
+
+  cursor: pointer;
+
+  span {
+    color: ${({ disabled }) => (disabled ? color.Color.Light.label.alt : color.Color.Light.color.neturalPrimary)};
+
+    font-size: ${font.Typograhpy.Body};
+    font-weight: ${font.Typograhpy.FontWeight.Medium};
+  }
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+
+  ${({ customStyle }) => customStyle}
+`;
+
 const ButtonSizeStyle = {
   cta: css`
     width: 320px;

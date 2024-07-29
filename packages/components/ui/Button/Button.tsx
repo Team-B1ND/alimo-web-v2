@@ -27,3 +27,13 @@ export const ToggleButton = ({ disabled }: ButtonProps) => {
 export const CheckBoxButton = ({ disabled }: ButtonProps) => {
   return <>{disabled ? <S.CheckBoxButton src={Disabled} /> : <S.CheckBoxButton src={Checked} />}</>;
 };
+
+export const TextButton = ({ customStyle, disabled, leftIcon, rightIcon, children }: ButtonProps) => {
+  return (
+    <S.TextButtonWrap customStyle={customStyle} disabled={disabled}>
+      {leftIcon}
+      <span>{children}</span>
+      {rightIcon}
+    </S.TextButtonWrap>
+  );
+};
