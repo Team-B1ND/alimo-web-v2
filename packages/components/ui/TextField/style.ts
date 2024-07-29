@@ -21,7 +21,7 @@ export const TextFieldWrap = styled.label<{ shape: Shape; isdisabled: boolean; c
 
     font-size: ${font.Typograhpy.Body};
     font-weight: ${font.Typograhpy.FontWeight.Medium};
-    color: ${({ isdisabled }) => (isdisabled ? color.Color.Light.label.back : color.Color.Light.label.normal)};
+    color: ${({ isdisabled }) => (isdisabled ? color.Color.Light.label.normal : color.Color.Light.label.normal)};
 
     border: none;
 
@@ -30,6 +30,7 @@ export const TextFieldWrap = styled.label<{ shape: Shape; isdisabled: boolean; c
 
   input:focus {
     outline: none;
+    caret-color: ${color.Color.Primary60};
   }
 
   &:focus-within {
@@ -54,11 +55,53 @@ export const TraillingIcon = styled.div`
   justify-content: center;
 `;
 
-const TextFieldStyle = {
-  default: css`
-    border-radius: 12px;
-  `,
-  rounded: css`
-    border-radius: 999px;
-  `,
-};
+export const CodeTextFieldWrap = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: max-content;
+  gap: 10px;
+`;
+
+export const CodeTextField = styled.div<{ isdisabled: boolean; customStyle?: CSSObject }>`
+  width: 42px;
+  height: 47px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid ${({ isdisabled }) => (isdisabled ? color.Color.Light.label.back : color.Color.Light.label.alt)};
+  border-radius: 12px;
+
+  input {
+    width: 10px;
+    height: 21px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    background: transparent;
+
+    font-size: ${font.Typograhpy.Body};
+    font-weight: ${font.Typograhpy.FontWeight.Medium};
+    color: ${color.Color.Light.label.normal};
+  }
+
+  input:focus {
+    outline: none;
+    caret-color: ${color.Color.Primary60};
+  }
+
+  &:focus-within {
+    border-color: ${color.Color.Primary60};
+  }
+
+  input::placeholder {
+    color: ${color.Color.Light.label.em};
+  }
+
+  ${({ customStyle }) => customStyle}
+`;

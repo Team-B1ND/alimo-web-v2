@@ -8,6 +8,7 @@ export interface TextFieldProps {
   shape: Shape;
   isDisabled?: boolean;
   customStyle: CSSObject;
+  count: number;
   onchange: () => void;
   onclick: () => void;
 }
