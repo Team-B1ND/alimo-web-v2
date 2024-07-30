@@ -16,16 +16,24 @@ export const Button = ({ buttonSize, customStyle, children, leftIcon, rightIcon,
   );
 };
 
-export const ToggleButton = ({ disabled }: ButtonProps) => {
+export const ToggleButton = ({ disabled, onclick }: ButtonProps) => {
   return (
-    <S.ToggleButtonWrap disabled={disabled} onClick={(prev) => !prev}>
+    <S.ToggleButtonWrap disabled={disabled} onClick={onclick}>
       <span></span>
     </S.ToggleButtonWrap>
   );
 };
 
-export const CheckBoxButton = ({ disabled }: ButtonProps) => {
-  return <>{disabled ? <S.CheckBoxButton src={Disabled} /> : <S.CheckBoxButton src={Checked} />}</>;
+export const CheckBoxButton = ({ disabled, onclick }: ButtonProps) => {
+  return (
+    <>
+      {disabled ? (
+        <S.CheckBoxButton src={Disabled} onClick={onclick} />
+      ) : (
+        <S.CheckBoxButton src={Checked} onClick={onclick} />
+      )}
+    </>
+  );
 };
 
 export const TextButton = ({ customStyle, disabled, leftIcon, rightIcon, children, onclick }: ButtonProps) => {
