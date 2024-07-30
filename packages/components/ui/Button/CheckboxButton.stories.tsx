@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { CheckBoxButton } from "./Button";
+import { CheckBoxButton } from "./CheckBoxButton";
 
 export default {
   title: "ui/Button/Checkbox",
