@@ -26,7 +26,7 @@ export const ShadowStyles: { [key in ShadowType]: ShadowStyle } = {
   },
 };
 
-export const GrowShadow = (type: ShadowType) => css`
+export const AlimoShadow = (type: ShadowType) => css`
   box-shadow: ${({ theme }) =>
     `0px ${ShadowStyles[type].y}px ${ShadowStyles[type].blur}px 0px ${theme.elevationBlack1}`};
 `;
