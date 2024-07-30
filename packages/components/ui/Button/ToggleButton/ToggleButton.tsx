@@ -1,6 +1,6 @@
 import React from "react";
-import * as S from "./style";
-import { ButtonProps } from "./types";
+import * as S from "../style";
+import { ButtonProps } from "../types";
 
 export const ToggleButton = ({ disabled, onclick }: ButtonProps) => {
   return (

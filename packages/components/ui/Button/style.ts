@@ -1,7 +1,8 @@
-import styled, { css, CSSObject } from "styled-components";
+import styled, { css, CSSObject, RuleSet } from "styled-components";
 import { AlimoTypography } from "../../../styles/src/AlimoTypography";
 import { AlimoColor } from "../../../foundation/src/token/colorToken";
 import { AlimoThemelight } from "../../../styles/src/AlimoTheme/AlimoTheme";
+import { ButtonSize } from "./types";
 
 export const ButtonWrap = styled.button<{ buttonSize: string; customStyle?: CSSObject; disabled: boolean }>`
   display: flex;
@@ -100,7 +101,14 @@ export const TextButtonWrap = styled.div<{ customStyle?: CSSObject; disabled: bo
   ${({ customStyle }) => customStyle}
 `;
 
-const ButtonSizeStyle = {
+interface ButtonStyleRule {
+  cta: RuleSet;
+  large: RuleSet;
+  medium: RuleSet;
+  small: RuleSet;
+}
+
+const ButtonSizeStyle: ButtonStyleRule = {
   cta: css`
     width: 320px;
     height: 56px;

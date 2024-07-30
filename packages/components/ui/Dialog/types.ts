@@ -8,7 +8,7 @@ export interface DialogProps {
   denyContent: string;
   customStyle?: CSSObject;
   placeholder?: string;
-  value?: string;
+  value: string;
   trailingIcon?: React.ReactNode;
   onchange?: () => void;
   onclick?: () => void;

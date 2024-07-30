@@ -1,6 +1,6 @@
 import React from "react";
-import * as S from "./style";
-import { ButtonProps } from "./types";
+import * as S from "../style";
+import { ButtonProps } from "../types";
 
 export const TextButton = ({ customStyle, disabled, leftIcon, rightIcon, children, onclick }: ButtonProps) => {
   return (

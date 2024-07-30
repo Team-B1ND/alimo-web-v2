@@ -2,7 +2,7 @@ import React from "react";
 import * as S from "./style";
 import { DialogProps } from "./types";
 import { Button } from "../Button/Button";
-import { TextButton } from "../Button/TextButton";
+import { TextButton } from "../Button/TextButton/TextButton";
 import { TextField } from "../TextField/TextField";
 import { AlimoThemelight } from "../../../styles/src/AlimoTheme/AlimoTheme";
 
@@ -33,7 +33,7 @@ export const Dialog = ({
           isDisabled={false}
           placeholder={placeholder!}
           type="text"
-          value={value!}
+          value={value}
           onchange={onchange!}
           onclick={onclick!}
           trailingIcon={trailingIcon}
