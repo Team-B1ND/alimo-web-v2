@@ -1,7 +1,7 @@
 import { CSSObject } from "styled-components";
 
 export interface ButtonProps {
-  buttonSize: ButtonSize;
+  buttonSize?: ButtonSize;
   customStyle?: CSSObject;
   children: string;
   leftIcon?: React.ReactNode;

@@ -45,6 +45,7 @@ export const ToggleButtonWrap = styled.div<{ disabled: boolean }>`
   border-radius: 50px;
 
   display: flex;
+  transition: 2s justify-content;
   justify-content: ${({ disabled }) => (!disabled ? "flex-end" : "flex-start")};
   align-items: center;
   padding-left: 1.5px;

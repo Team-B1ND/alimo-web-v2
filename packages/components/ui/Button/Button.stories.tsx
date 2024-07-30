@@ -7,6 +7,7 @@ export default {
   args: {
     children: "로그인",
   },
+  tags: ["autodocs"]
 } as Meta<typeof Button>;
 
 export const CtaButton: StoryObj<typeof Button> = {

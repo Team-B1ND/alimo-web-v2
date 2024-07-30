@@ -18,6 +18,8 @@ export const DialogWrap = styled.div<{ type: DialogType }>`
 
   background: ${AlimoThemelight.backgroundNormal};
 
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.04);
+
   ${({ type }) => {
     return DialogHeightStyle[type];
   }}

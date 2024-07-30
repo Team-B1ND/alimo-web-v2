@@ -52,7 +52,12 @@ export const Dialog = ({
           {denyContent}
         </TextButton>
         {type !== "dismiss" && (
-          <Button buttonSize="cta" disabled={false} onclick={onConfirm}>
+          <Button
+            buttonSize="cta"
+            disabled={false}
+            onclick={onConfirm}
+            customStyle={{ width: "143px", height: "56px" }}
+          >
             {confirmContent}
           </Button>
         )}
