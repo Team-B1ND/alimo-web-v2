@@ -1,6 +1,6 @@
 import styled, { css, CSSObject } from "styled-components";
-import color from "../../../foundation/color/color";
-import font from "../../../foundation/typography/typography";
+import { AlimoTypography } from "../../../styles/src/AlimoTypography";
+import { AlimoThemelight } from "../../../styles/src/AlimoTheme/AlimoTheme";
 import { DialogType } from "./types";
 
 export const DialogWrap = styled.div<{ type: DialogType }>`
@@ -16,7 +16,7 @@ export const DialogWrap = styled.div<{ type: DialogType }>`
   border: none;
   border-radius: 16px;
 
-  background: ${color.Color.Light.background.normal};
+  background: ${AlimoThemelight.backgroundNormal};
 
   ${({ type }) => {
     return DialogHeightStyle[type];
@@ -33,17 +33,15 @@ export const TextWrap = styled.div`
   justify-content: center;
 
   h1 {
-    color: ${color.Color.Light.label.normal};
-    font-size: ${font.Typograhpy.HeadLine1};
-    font-weight: ${font.Typograhpy.FontWeight.Bold};
+    color: ${AlimoThemelight.labelNormal};
+    ${AlimoTypography.Headline1.Bold}
     width: fit-content;
     height: fit-content;
   }
 
   span {
-    color: ${color.Color.Light.label.em};
-    font-size: ${font.Typograhpy.Body};
-    font-weight: ${font.Typograhpy.FontWeight.Medium};
+    color: ${AlimoThemelight.labelEm};
+    ${AlimoTypography.Body.Medium}
     width: fit-content;
     height: fit-content;
   }

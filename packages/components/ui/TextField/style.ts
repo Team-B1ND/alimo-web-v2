@@ -1,7 +1,8 @@
 import styled, { CSSObject, css } from "styled-components";
 import { Shape } from "./types";
-import color from "../../../foundation/color/color";
-import font from "../../../foundation/typography/typography";
+import { AlimoTypography } from "../../../styles/src/AlimoTypography";
+import { AlimoColor } from "../../../foundation/src/token/colorToken";
+import { AlimoThemelight } from "../../../styles/src/AlimoTheme/AlimoTheme";
 
 export const TextFieldWrap = styled.label<{ shape: Shape; isdisabled: boolean; customStyle?: CSSObject }>`
   width: 320px;
@@ -10,7 +11,7 @@ export const TextFieldWrap = styled.label<{ shape: Shape; isdisabled: boolean; c
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid ${({ isdisabled }) => (isdisabled ? color.Color.Light.label.back : color.Color.Light.label.alt)};
+  border: 1px solid ${({ isdisabled }) => (isdisabled ? AlimoThemelight.labelBack : AlimoThemelight.labelAlt)};
   border-radius: ${({ shape }) => (shape === "default" ? "12px" : "999px")};
   justify-content: center;
 
@@ -19,9 +20,8 @@ export const TextFieldWrap = styled.label<{ shape: Shape; isdisabled: boolean; c
     height: 32px;
     padding: 8px 8px 8px 12px;
 
-    font-size: ${font.Typograhpy.Body};
-    font-weight: ${font.Typograhpy.FontWeight.Medium};
-    color: ${({ isdisabled }) => (isdisabled ? color.Color.Light.label.normal : color.Color.Light.label.normal)};
+    ${AlimoTypography.Body.Medium}
+    color: ${({ isdisabled }) => (isdisabled ? AlimoThemelight.labelBack : AlimoThemelight.labelEm)};
 
     border: none;
 
@@ -30,15 +30,15 @@ export const TextFieldWrap = styled.label<{ shape: Shape; isdisabled: boolean; c
 
   input:focus {
     outline: none;
-    caret-color: ${color.Color.Primary60};
+    caret-color: ${AlimoThemelight.primary};
   }
 
   &:focus-within {
-    border-color: ${color.Color.Primary60};
+    border-color: ${AlimoThemelight.primary};
   }
 
   input::placeholder {
-    color: ${color.Color.Light.label.em};
+    color: ${AlimoThemelight.labelEm};
   }
 
   ${({ customStyle }) => customStyle}
@@ -71,7 +71,7 @@ export const CodeTextField = styled.div<{ isdisabled: boolean; customStyle?: CSS
   align-items: center;
   justify-content: center;
 
-  border: 1px solid ${({ isdisabled }) => (isdisabled ? color.Color.Light.label.back : color.Color.Light.label.alt)};
+  border: 1px solid ${({ isdisabled }) => (isdisabled ? AlimoThemelight.labelBack : AlimoThemelight.labelAlt)};
   border-radius: 12px;
 
   input {
@@ -85,22 +85,21 @@ export const CodeTextField = styled.div<{ isdisabled: boolean; customStyle?: CSS
     border: none;
     background: transparent;
 
-    font-size: ${font.Typograhpy.Body};
-    font-weight: ${font.Typograhpy.FontWeight.Medium};
-    color: ${color.Color.Light.label.normal};
+    ${AlimoTypography.Body.Medium}
+    color: ${AlimoThemelight.labelNormal};
   }
 
   input:focus {
     outline: none;
-    caret-color: ${color.Color.Primary60};
+    caret-color: ${AlimoThemelight.primary};
   }
 
   &:focus-within {
-    border-color: ${color.Color.Primary60};
+    border-color: ${AlimoThemelight.primary};
   }
 
   input::placeholder {
-    color: ${color.Color.Light.label.em};
+    color: ${AlimoThemelight.labelEm};
   }
 
   ${({ customStyle }) => customStyle}

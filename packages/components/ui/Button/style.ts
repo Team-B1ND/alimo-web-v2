@@ -1,12 +1,13 @@
 import styled, { css, CSSObject } from "styled-components";
-import font from "../../../foundation/typography/typography";
-import color from "../../../foundation/color/color";
+import { AlimoTypography } from "../../../styles/src/AlimoTypography";
+import { AlimoColor } from "../../../foundation/src/token/colorToken";
+import { AlimoThemelight } from "../../../styles/src/AlimoTheme/AlimoTheme";
 
 export const ButtonWrap = styled.button<{ buttonSize: string; customStyle?: CSSObject; disabled: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: ${({ disabled }) => (!disabled ? color.Color.Primary60 : color.Color.Natural10)};
+  background: ${({ disabled }) => (!disabled ? AlimoColor.Primary60 : AlimoColor.Netural10)};
   border: none;
   cursor: pointer;
   div {
@@ -22,10 +23,10 @@ export const ButtonWrap = styled.button<{ buttonSize: string; customStyle?: CSSO
     }
 
     span {
-      color: ${({ disabled }) => (!disabled ? color.Color.Natural90 : color.Color.Natural40)};
+      color: ${({ disabled }) => (!disabled ? AlimoColor.Netural90 : AlimoColor.Netural40)};
       font-size: 16px;
       font-weight: ${({ buttonSize }) =>
-        buttonSize === "small" ? font.Typograhpy.FontWeight.Medium : font.Typograhpy.FontWeight.Bold};
+        buttonSize === "small" ? AlimoTypography.Body.Medium : AlimoTypography.Body.Bold};
     }
 
     ${({ buttonSize }) => {
@@ -51,7 +52,7 @@ export const ToggleButtonWrap = styled.div<{ disabled: boolean }>`
   padding-left: 1.5px;
   padding-right: 1.5px;
 
-  background: ${({ disabled }) => (!disabled ? color.Color.Primary60 : color.Color.Light.label.alt)};
+  background: ${({ disabled }) => (!disabled ? AlimoColor.Primary60 : AlimoThemelight.labelAlt)};
 
   cursor: pointer;
 
@@ -61,7 +62,7 @@ export const ToggleButtonWrap = styled.div<{ disabled: boolean }>`
 
     border: none;
     border-radius: 50%;
-    background: ${color.Color.Natural00};
+    background: ${AlimoColor.Netural00};
   }
 `;
 
@@ -86,11 +87,10 @@ export const TextButtonWrap = styled.div<{ customStyle?: CSSObject; disabled: bo
 
   cursor: pointer;
 
-  color: ${({ disabled }) => (disabled ? color.Color.Light.label.alt : color.Color.Light.color.neturalPrimary)};
+  color: ${({ disabled }) => (disabled ? AlimoThemelight.labelAlt : AlimoThemelight.neturalPrimary)};
 
   span {
-    font-size: ${font.Typograhpy.Body};
-    font-weight: ${font.Typograhpy.FontWeight.Medium};
+    ${AlimoTypography.Body.Medium}
   }
 
   img {
