@@ -100,6 +100,12 @@ importers:
         specifier: ^2.1.4
         version: 2.1.4
 
+  packages/assets:
+    dependencies:
+      styled-components:
+        specifier: ^6.1.12
+        version: 6.1.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+
   packages/components:
     dependencies:
       styled-components:
@@ -146,9 +152,47 @@ importers:
         specifier: ^8.2.5
         version: 8.2.5(@babel/preset-env@7.24.8(@babel/core@7.24.9))
 
+  packages/foundation:
+    dependencies:
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+      styled-components:
+        specifier: ^6.1.12
+        version: 6.1.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      typescript:
+        specifier: ^4.9.5
+        version: 4.9.5
+    devDependencies:
+      '@alimo/assets':
+        specifier: workspace:*
+        version: link:../assets
+      '@types/react':
+        specifier: ^18.3.3
+        version: 18.3.3
+
   packages/hooks: {}
 
   packages/icons: {}
+
+  packages/styles:
+    dependencies:
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+      styled-components:
+        specifier: ^6.1.12
+        version: 6.1.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      typescript:
+        specifier: ^4.9.5
+        version: 4.9.5
+    devDependencies:
+      '@alimo/foundation':
+        specifier: workspace:*
+        version: link:../foundation
+      '@types/react':
+        specifier: ^18.3.3
+        version: 18.3.3
 
   packages/utils: {}
 
