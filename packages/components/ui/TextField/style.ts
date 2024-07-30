@@ -21,7 +21,7 @@ export const TextFieldWrap = styled.label<{ shape: Shape; isdisabled: boolean; c
     padding: 8px 8px 8px 12px;
 
     ${AlimoTypography.Body.Medium}
-    color: ${({ isdisabled }) => (isdisabled ? AlimoThemelight.labelBack : AlimoThemelight.labelEm)};
+    color: ${({ isdisabled }) => (isdisabled ? AlimoThemelight.labelBack : AlimoThemelight.labelNormal)};
 
     border: none;
 

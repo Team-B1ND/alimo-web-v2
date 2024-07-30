@@ -1,9 +1,10 @@
 import React from "react";
 import * as S from "./style";
 import { DialogProps } from "./types";
-import { Button, TextButton } from "../Button/Button";
+import { Button } from "../Button/Button";
+import { TextButton } from "../Button/TextButton";
 import { TextField } from "../TextField/TextField";
-import color from "../../../foundation/color/color";
+import { AlimoThemelight } from "../../../styles/src/AlimoTheme/AlimoTheme";
 
 export const Dialog = ({
   type,
@@ -42,7 +43,12 @@ export const Dialog = ({
       <S.ButtonWrap
         customStyle={type === "dismiss" ? { justifyContent: "flex-end" } : { justifyContent: "center" } || customStyle}
       >
-        <TextButton disabled={false} onclick={onDeny} buttonSize="small" customStyle={{ color: color.Color.Primary60 }}>
+        <TextButton
+          disabled={false}
+          onclick={onDeny}
+          buttonSize="small"
+          customStyle={{ color: AlimoThemelight.primary }}
+        >
           {denyContent}
         </TextButton>
         {type !== "dismiss" && (

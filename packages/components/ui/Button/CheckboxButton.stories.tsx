@@ -6,6 +6,14 @@ export default {
   component: CheckBoxButton,
 } as Meta<typeof CheckBoxButton>;
 
-export const Checkbox: StoryObj<typeof CheckBoxButton> = {
-  args: {},
+export const EnableCheckbox: StoryObj<typeof CheckBoxButton> = {
+  args: {
+    disabled: false
+  },
+};
+
+export const DisableCheckbox: StoryObj<typeof CheckBoxButton> = {
+  args: {
+    disabled: true
+  },
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { TextButton } from "./Button";
+import { TextButton } from "./TextButton";
 
 export default {
   title: "ui/Button/TextTypeButton",

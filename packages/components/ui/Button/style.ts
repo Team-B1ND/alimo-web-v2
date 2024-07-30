@@ -24,9 +24,7 @@ export const ButtonWrap = styled.button<{ buttonSize: string; customStyle?: CSSO
 
     span {
       color: ${({ disabled }) => (!disabled ? AlimoColor.Netural90 : AlimoColor.Netural40)};
-      font-size: 16px;
-      font-weight: ${({ buttonSize }) =>
-        buttonSize === "small" ? AlimoTypography.Body.Medium : AlimoTypography.Body.Bold};
+      ${({ buttonSize }) => (buttonSize === "small" ? AlimoTypography.Body.Medium : AlimoTypography.Body.Bold)};
     }
 
     ${({ buttonSize }) => {
