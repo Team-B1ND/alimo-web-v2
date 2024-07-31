@@ -1,10 +1,10 @@
 import { RuleSet, css } from "styled-components";
-import { ButtonSize } from "../../components/ui/Button/types";
+
 interface ButtonStyleRule {
-  cta: RuleSet<typeof ButtonSize>;
-  large: RuleSet<typeof ButtonSize>;
-  medium: RuleSet<typeof ButtonSize>;
-  small: RuleSet<typeof ButtonSize>;
+  cta: RuleSet;
+  large: RuleSet;
+  medium: RuleSet;
+  small: RuleSet;
 }
 
 export const ButtonSizeStyle: ButtonStyleRule = {

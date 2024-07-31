@@ -10,9 +10,4 @@ export interface ButtonProps {
   onclick: () => void;
 }
 
-export enum ButtonSize {
-  cta,
-  large,
-  medium,
-  small
-}
+export type ButtonSize = "cta" | "large" | "medium" | "small";
