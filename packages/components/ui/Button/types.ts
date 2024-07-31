@@ -7,6 +7,8 @@ export interface ButtonProps {
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
   disabled: boolean;
+  selected: boolean;
+  backgroundSub?: string;
   onclick: () => void;
 }
 

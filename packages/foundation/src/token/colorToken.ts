@@ -36,6 +36,8 @@ export const AlimoColor =Object.freeze({
     Red90: "#750404",
     Red100: "#3B0101",
 
+    Common: "transparent",
+
 })
 const color = {
   Color: {
