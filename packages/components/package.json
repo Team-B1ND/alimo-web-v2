@@ -25,5 +25,8 @@
     "@storybook/test": "^8.2.5",
     "prop-types": "^15.8.1",
     "storybook": "^8.2.5"
+  },
+  "dependencies": {
+    "styled-components": "^6.1.12"
   }
 }
