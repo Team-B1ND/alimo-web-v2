@@ -12,11 +12,7 @@ export const CheckBoxButton = ({ onclick }: ButtonProps) => {
   };
   return (
     <>
-      {enable ? (
-        <S.CheckBoxButton src={Disabled} onClick={handleEnable} />
-      ) : (
-        <S.CheckBoxButton src={Checked} onClick={handleEnable} />
-      )}
+      <S.CheckBoxButton src={enable ? Checked : Disabled} onClick={handleEnable} />
     </>
   );
 };
