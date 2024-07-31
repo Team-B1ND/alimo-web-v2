@@ -2,7 +2,7 @@ import styled, { css, CSSObject, RuleSet } from "styled-components";
 import { AlimoTypography } from "../../../styles/src/AlimoTypography";
 import { AlimoColor } from "../../../foundation/src/token/colorToken";
 import { AlimoThemelight } from "../../../styles/src/AlimoTheme/AlimoTheme";
-import { ButtonSize } from "./types";
+import { ButtonSizeStyle, ButtonTextStyle } from "../../../styles/Button/ButtonStyle";
 
 export const ButtonWrap = styled.button<{ buttonSize: string; customStyle?: CSSObject; disabled: boolean }>`
   display: flex;
@@ -44,10 +44,10 @@ export const ToggleButtonWrap = styled.div<{ disabled: boolean }>`
   width: 50px;
   height: 30px;
   border-radius: 50px;
+  position: relative;
 
   display: flex;
-  transition: 2s justify-content;
-  justify-content: ${({ disabled }) => (!disabled ? "flex-end" : "flex-start")};
+  /* justify-content: ${({ disabled }) => (!disabled ? "flex-end" : "flex-start")}; */
   align-items: center;
   padding-left: 1.5px;
   padding-right: 1.5px;
@@ -57,12 +57,15 @@ export const ToggleButtonWrap = styled.div<{ disabled: boolean }>`
   cursor: pointer;
 
   span {
+    position: absolute;
     width: 27px;
     height: 27px;
-
     border: none;
     border-radius: 50%;
     background: ${AlimoColor.Netural00};
+
+    transition: left 0.3s ease-out; /* 애니메이션 추가 */
+    left: ${({ disabled }) => (disabled ? "3%" : "45%")};
   }
 `;
 
@@ -100,58 +103,3 @@ export const TextButtonWrap = styled.div<{ customStyle?: CSSObject; disabled: bo
 
   ${({ customStyle }) => customStyle}
 `;
-
-interface ButtonStyleRule {
-  cta: RuleSet;
-  large: RuleSet;
-  medium: RuleSet;
-  small: RuleSet;
-}
-
-const ButtonSizeStyle: ButtonStyleRule = {
-  cta: css`
-    width: 320px;
-    height: 56px;
-    border-radius: 12px;
-  `,
-
-  large: css`
-    width: 146px;
-    height: 45px;
-    border-radius: 10px;
-  `,
-
-  medium: css`
-    width: 128px;
-    height: 41px;
-    border-radius: 8px;
-  `,
-
-  small: css`
-    width: 122px;
-    height: 37px;
-    border-radius: 6px;
-  `,
-};
-
-const ButtonTextStyle = {
-  cta: css`
-    width: 108px;
-    gap: 6px;
-  `,
-
-  large: css`
-    width: 106px;
-    gap: 5px;
-  `,
-
-  medium: css`
-    width: 104px;
-    gap: 4px;
-  `,
-
-  small: css`
-    width: 102px;
-    gap: 3px;
-  `,
-};

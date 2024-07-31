@@ -7,14 +7,8 @@ export default {
   tags: ["autodocs"],
 } as Meta<typeof CheckBoxButton>;
 
-export const EnableCheckbox: StoryObj<typeof CheckBoxButton> = {
+export const Checkbox: StoryObj<typeof CheckBoxButton> = {
   args: {
     disabled: false,
-  },
-};
-
-export const DisableCheckbox: StoryObj<typeof CheckBoxButton> = {
-  args: {
-    disabled: true,
   },
 };
