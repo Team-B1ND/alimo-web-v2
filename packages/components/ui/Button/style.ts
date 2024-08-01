@@ -4,7 +4,7 @@ import { AlimoColor } from "../../../foundation/src/token/colorToken";
 import { AlimoThemelight } from "../../../styles/src/AlimoTheme/AlimoTheme";
 import { ButtonSizeStyle, ButtonTextStyle } from "../../../styles/Button/ButtonStyle";
 
-export const ButtonWrap = styled.button<{ buttonSize: string; customStyle?: CSSObject; disabled: boolean }>`
+export const ButtonWrap = styled.button<{ buttonSize: string; disabled: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,11 +33,15 @@ export const ButtonWrap = styled.button<{ buttonSize: string; customStyle?: CSSO
     }}
   }
 
+  &:active {
+    scale: 0.97;
+  }
+
+  transition: scale 0.4s;
+
   ${({ buttonSize }) => {
     return ButtonSizeStyle[buttonSize];
   }}
-
-  ${({ customStyle }) => customStyle}
 `;
 
 export const ToggleButtonWrap = styled.div<{ disabled: boolean }>`
@@ -76,7 +80,7 @@ export const CheckBoxButton = styled.img`
   cursor: pointer;
 `;
 
-export const TextButtonWrap = styled.div<{ customStyle?: CSSObject; disabled: boolean }>`
+export const TextButtonWrap = styled.div<{ disabled: boolean }>`
   width: 102px;
   height: 21px;
 
@@ -100,6 +104,4 @@ export const TextButtonWrap = styled.div<{ customStyle?: CSSObject; disabled: bo
     width: 20px;
     height: 20px;
   }
-
-  ${({ customStyle }) => customStyle}
 `;

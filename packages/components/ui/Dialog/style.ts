@@ -49,15 +49,13 @@ export const TextWrap = styled.div`
   }
 `;
 
-export const ButtonWrap = styled.div<{ customStyle?: CSSObject }>`
+export const ButtonWrap = styled.div`
   width: 293px;
   height: 56px;
 
   display: flex;
   align-items: center;
   gap: 8px;
-
-  ${({ customStyle }) => customStyle}
 `;
 
 const DialogHeightStyle = {

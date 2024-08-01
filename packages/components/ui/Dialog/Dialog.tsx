@@ -37,11 +37,11 @@ export const Dialog = ({
           onchange={onchange!}
           onclick={onclick!}
           trailingIcon={trailingIcon}
-          customStyle={{ width: "293px" }}
+          customStyle={customStyle}
         />
       )}
       <S.ButtonWrap
-        customStyle={type === "dismiss" ? { justifyContent: "flex-end" } : { justifyContent: "center" } || customStyle}
+        style={type === "dismiss" ? { justifyContent: "flex-end" } : { justifyContent: "center" } || customStyle}
       >
         <TextButton
           disabled={false}

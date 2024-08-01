@@ -4,7 +4,7 @@ import { AlimoTypography } from "../../../styles/src/AlimoTypography";
 import { AlimoColor } from "../../../foundation/src/token/colorToken";
 import { AlimoThemelight } from "../../../styles/src/AlimoTheme/AlimoTheme";
 
-export const TextFieldWrap = styled.label<{ shape: Shape; isdisabled: boolean; customStyle?: CSSObject }>`
+export const TextFieldWrap = styled.label<{ shape: Shape; isdisabled: boolean }>`
   width: 320px;
   height: 48px;
 
@@ -41,7 +41,6 @@ export const TextFieldWrap = styled.label<{ shape: Shape; isdisabled: boolean; c
     color: ${AlimoThemelight.labelEm};
   }
 
-  ${({ customStyle }) => customStyle}
 `;
 
 export const TraillingIcon = styled.div`
@@ -63,7 +62,7 @@ export const CodeTextFieldWrap = styled.div`
   gap: 10px;
 `;
 
-export const CodeTextField = styled.div<{ isdisabled: boolean; customStyle?: CSSObject }>`
+export const CodeTextField = styled.div<{ isdisabled: boolean }>`
   width: 42px;
   height: 47px;
 
@@ -101,6 +100,4 @@ export const CodeTextField = styled.div<{ isdisabled: boolean; customStyle?: CSS
   input::placeholder {
     color: ${AlimoThemelight.labelEm};
   }
-
-  ${({ customStyle }) => customStyle}
 `;
