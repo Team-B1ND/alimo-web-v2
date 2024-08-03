@@ -37,7 +37,7 @@ export const Dialog = ({
           onchange={onchange!}
           onclick={onclick!}
           trailingIcon={trailingIcon}
-          customStyle={customStyle}
+          customStyle={{ width: "280px" }}
         />
       )}
       <S.ButtonWrap

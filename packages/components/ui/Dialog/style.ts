@@ -5,7 +5,6 @@ import { DialogType } from "./types";
 
 export const DialogWrap = styled.div<{ type: DialogType }>`
   width: 293px;
-  padding: 18px;
 
   display: flex;
   flex-direction: column;
