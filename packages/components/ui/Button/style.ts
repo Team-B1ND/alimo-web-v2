@@ -130,6 +130,14 @@ export const CategorySelectButtonWrap = styled.button<{ selected: boolean }>`
   cursor: pointer;
   padding: 6px 16px;
 
+  &:hover {
+    background: ${AlimoColor.Netural20};
+  }
+
+  &:active {
+    background: ${AlimoColor.Netural30};
+  }
+
   span {
     color: ${AlimoThemelight.labelNormal}
     ${AlimoTypography.Label.Medium}
