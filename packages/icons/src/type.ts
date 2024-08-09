@@ -5,6 +5,6 @@ export interface IconProps extends SVGAttributes<HTMLOrSVGElement> {
   size?: number;
   width?: number;
   height?: number;
-  svgStyle: RuleSet;
+  svgStyle?: RuleSet;
   pathStyle?: RuleSet;
 }
