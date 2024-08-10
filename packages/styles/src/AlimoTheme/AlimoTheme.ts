@@ -1,5 +1,5 @@
 import { AlimoTheme } from "styled-components";
-import { AlimoColor } from "@alimo/foundation";
+import { AlimoColor } from "../../../foundation/src/token/colorToken"
 
 export const AlimoThemelight: AlimoTheme = Object.freeze({
   neutralPrimary: AlimoColor.Netural90,
