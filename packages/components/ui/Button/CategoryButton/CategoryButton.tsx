@@ -4,7 +4,7 @@ import { ButtonProps } from "../types";
 
 export const CategoryButton = ({ children, disabled, backgroundSub }: ButtonProps) => {
   return (
-    <S.CategoryButtonWrap disabled={disabled} backgroundSub={backgroundSub}>
+    <S.CategoryButtonWrap disabled={disabled} backgroundSub={backgroundSub!}>
       <span>{children}</span>
     </S.CategoryButtonWrap>
   );

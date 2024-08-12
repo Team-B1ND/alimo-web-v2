@@ -4,7 +4,7 @@ import { AlimoColor } from "../../../foundation/src/token/colorToken";
 import { AlimoThemelight } from "../../../styles/src/AlimoTheme/AlimoTheme";
 import { ButtonSizeStyle, ButtonTextStyle } from "../../../styles/Button/ButtonStyle";
 
-export const ButtonWrap = styled.button<{ buttonSize: string; disabled: boolean }>`
+export const ButtonWrap = styled.button<{ buttonSize: string; customStyle?: CSSObject; disabled: boolean}>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,15 +33,11 @@ export const ButtonWrap = styled.button<{ buttonSize: string; disabled: boolean 
     }}
   }
 
-  &:active {
-    scale: 0.97;
-  }
-
-  transition: scale 0.4s;
-
   ${({ buttonSize }) => {
     return ButtonSizeStyle[buttonSize];
   }}
+
+  ${({ customStyle }) => customStyle}
 `;
 
 export const ToggleButtonWrap = styled.div<{ disabled: boolean }>`
@@ -80,7 +76,7 @@ export const CheckBoxButton = styled.img`
   cursor: pointer;
 `;
 
-export const TextButtonWrap = styled.div<{ disabled: boolean }>`
+export const TextButtonWrap = styled.div<{ customStyle?: CSSObject; disabled: boolean }>`
   width: 102px;
   height: 21px;
 
@@ -104,4 +100,46 @@ export const TextButtonWrap = styled.div<{ disabled: boolean }>`
     width: 20px;
     height: 20px;
   }
+
+  ${({ customStyle }) => customStyle}
 `;
+
+export const CategoryButtonWrap = styled.button<{ disabled: boolean, backgroundSub: string }>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: ${({disabled, backgroundSub}) => (!disabled ? AlimoColor.Primary60 : !backgroundSub ? AlimoThemelight.backgroundSub : backgroundSub)};
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  padding: 6px 16px;
+
+  span {
+    color: ${({disabled}) => (!disabled ? AlimoColor.Netural90 : AlimoThemelight.labelEm)}
+    ${AlimoTypography.Label.Medium}
+  }
+`;
+
+export const CategorySelectButtonWrap = styled.button<{ selected: boolean }>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: ${AlimoThemelight.backgroundNormal};
+  border: 1.5px solid ${({selected}) => (selected ? AlimoColor.Primary60 : AlimoColor.Common)};
+  border-radius: 100px;
+  cursor: pointer;
+  padding: 6px 16px;
+
+  &:hover {
+    background: ${AlimoColor.Netural20};
+  }
+
+  &:active {
+    background: ${AlimoColor.Netural30};
+  }
+
+  span {
+    color: ${AlimoThemelight.labelNormal}
+    ${AlimoTypography.Label.Medium}
+  }
+`
