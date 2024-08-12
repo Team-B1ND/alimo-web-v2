@@ -26,6 +26,19 @@ export const TextFieldWrap = styled.label<{ shape: Shape; isdisabled: boolean }>
     border: none;
 
     background: transparent;
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 30px #fff inset;
+      -webkit-text-fill-color: #000;
+      border-radius: ${({ shape }) => (shape === "default" ? "12px" : "999px")};
+    }
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      transition: background-color 5000s ease-in-out 0s;
+      border-radius: ${({ shape }) => (shape === "default" ? "12px" : "999px")};
+    }
   }
 
   input:focus {
@@ -40,7 +53,6 @@ export const TextFieldWrap = styled.label<{ shape: Shape; isdisabled: boolean }>
   input::placeholder {
     color: ${AlimoThemelight.labelEm};
   }
-
 `;
 
 export const TraillingIcon = styled.div`
