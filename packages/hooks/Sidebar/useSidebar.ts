@@ -8,15 +8,14 @@ export const useSidebar = () => {
   const [isClicked, setIsClicked] = useState<string>("");
 
   const handleNavigation = ({ location }: NavigationProps) => {
+    if (location.pathname.startsWith("/profile")) {
+      setIsClicked("프로필");
+    } else if (location.pathname.startsWith("/manage")) {
+      setIsClicked("관리");
+    }
     switch (location.pathname) {
       case "/":
         setIsClicked("홈");
-        break;
-      case "/profile":
-        setIsClicked("프로필");
-        break;
-      case "/manage":
-        setIsClicked("관리");
         break;
       default:
         setIsClicked("");
