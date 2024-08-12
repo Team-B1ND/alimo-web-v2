@@ -8,5 +8,11 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/styled-components": "^5.1.34"
+  },
+  "dependencies": {
+    "styled-components": "^6.1.12"
+  }
 }
