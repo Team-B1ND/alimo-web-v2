@@ -5,7 +5,6 @@ import { DialogType } from "./types";
 
 export const DialogWrap = styled.div<{ type: DialogType }>`
   width: 293px;
-  padding: 18px;
 
   display: flex;
   flex-direction: column;
@@ -49,15 +48,13 @@ export const TextWrap = styled.div`
   }
 `;
 
-export const ButtonWrap = styled.div<{ customStyle?: CSSObject }>`
+export const ButtonWrap = styled.div`
   width: 293px;
   height: 56px;
 
   display: flex;
   align-items: center;
   gap: 8px;
-
-  ${({ customStyle }) => customStyle}
 `;
 
 const DialogHeightStyle = {

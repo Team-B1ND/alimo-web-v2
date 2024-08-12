@@ -4,7 +4,7 @@ import { AlimoTypography } from "../../../styles/src/AlimoTypography";
 import { AlimoColor } from "../../../foundation/src/token/colorToken";
 import { AlimoThemelight } from "../../../styles/src/AlimoTheme/AlimoTheme";
 
-export const TextFieldWrap = styled.label<{ shape: Shape; isdisabled: boolean; customStyle?: CSSObject }>`
+export const TextFieldWrap = styled.label<{ shape: Shape; isdisabled: boolean }>`
   width: 320px;
   height: 48px;
 
@@ -26,6 +26,19 @@ export const TextFieldWrap = styled.label<{ shape: Shape; isdisabled: boolean; c
     border: none;
 
     background: transparent;
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 30px #fff inset;
+      -webkit-text-fill-color: #000;
+      border-radius: ${({ shape }) => (shape === "default" ? "12px" : "999px")};
+    }
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      transition: background-color 5000s ease-in-out 0s;
+      border-radius: ${({ shape }) => (shape === "default" ? "12px" : "999px")};
+    }
   }
 
   input:focus {
@@ -40,8 +53,6 @@ export const TextFieldWrap = styled.label<{ shape: Shape; isdisabled: boolean; c
   input::placeholder {
     color: ${AlimoThemelight.labelEm};
   }
-
-  ${({ customStyle }) => customStyle}
 `;
 
 export const TraillingIcon = styled.div`
@@ -63,7 +74,7 @@ export const CodeTextFieldWrap = styled.div`
   gap: 10px;
 `;
 
-export const CodeTextField = styled.div<{ isdisabled: boolean; customStyle?: CSSObject }>`
+export const CodeTextField = styled.div<{ isdisabled: boolean }>`
   width: 42px;
   height: 47px;
 
@@ -101,6 +112,4 @@ export const CodeTextField = styled.div<{ isdisabled: boolean; customStyle?: CSS
   input::placeholder {
     color: ${AlimoThemelight.labelEm};
   }
-
-  ${({ customStyle }) => customStyle}
 `;

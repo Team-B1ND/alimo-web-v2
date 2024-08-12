@@ -14,7 +14,7 @@ export const TextField = ({
   onclick,
 }: TextFieldProps) => {
   return (
-    <S.TextFieldWrap shape={shape} isdisabled={isDisabled!} customStyle={customStyle} htmlFor="textfield">
+    <S.TextFieldWrap shape={shape} isdisabled={isDisabled!} style={customStyle} htmlFor="textfield">
       <input type={type} placeholder={placeholder} value={value} onChange={onchange} id="textfield" />
       <S.TraillingIcon onClick={onclick}>{trailingIcon}</S.TraillingIcon>
     </S.TextFieldWrap>
@@ -54,7 +54,7 @@ export const CodeTextField = ({ value, count, isDisabled, customStyle, onchange 
   const COUNT_OF_CODE = Array(count!)
     .fill("")
     .map((_, idx) => (
-      <S.CodeTextField isdisabled={isDisabled!} customStyle={customStyle}>
+      <S.CodeTextField isdisabled={isDisabled!} style={customStyle}>
         <input
           type="text"
           value={value}
