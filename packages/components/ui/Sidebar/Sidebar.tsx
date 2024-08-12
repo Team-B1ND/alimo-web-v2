@@ -14,11 +14,7 @@ import { useState } from "react";
 import { Button } from "../Button/Button";
 
 const Sidebar = ({ screen, isAdmin }: SidebarProps) => {
-  // const { isClicked, handleItemClick } = useSidebar();
-  const [isClicked, setIsClicked] = useState<string>("홈");
-  const handleItemClick = (item: string) => {
-    setIsClicked(item);
-  };
+  const { isClicked, handleItemClick } = useSidebar();
   return (
     // <Route>
     <S.SidebarWrap screen={screen}>
